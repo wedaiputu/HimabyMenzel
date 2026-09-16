@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HimaTemplate from "./Page/HimaTemplate";
+import HimaTemplate from "./Pages/HimaTemplate";
 
 export default function AppRoute() {
   return (

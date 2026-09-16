@@ -108,43 +108,43 @@ const VENUES = [
   {
     name: "Hima Petitenget",
     tag: "Flagship dining room",
-    img: "/src/assets/Images/HimaVenue1.jpg",
+    img: "/Images/HimaVenue1.jpg",
     href: "#contact",
   },
   {
     name: "Hima Rooftop Bar",
     tag: "Sundowners & small plates",
-    img: "/src/assets/Images/HimaVenue2.jpg",
+    img: "/Images/HimaVenue2.jpg",
     href: "#contact",
   },
   {
     name: "Hima Garden Terrace",
     tag: "Private events & celebrations",
-    img: "/src/assets/Images/HimaVenue3.jpg",
+    img: "/Images/HimaVenue3.jpg",
     href: "#contact",
   },
   {
     name: "Hima Beach Club",
     tag: "Sun loungers & seafood grill",
-    img: "/src/assets/Images/HimaVenue4.jpg",
+    img: "/Images/HimaVenue4.jpg",
     href: "#contact",
   },
   {
     name: "Hima Wine Cellar",
     tag: "Curated tastings & pairings",
-    img: "/src/assets/Images/HimaVenue5.jpg",
+    img: "/Images/HimaVenue5.jpg",
     href: "#contact",
   },
   {
     name: "Hima Chef's Table",
     tag: "Seasonal tasting menu at the pass",
-    img: "/src/assets/Images/HimaVenue6.jpg",
+    img: "/Images/HimaVenue6.jpg",
     href: "#contact",
   },
   {
     name: "Hima Private Dining",
     tag: "Celebrations & private gatherings",
-    img: "/src/assets/Images/HimaVenue7.jpg",
+    img: "/Images/HimaVenue7.jpg",
     href: "#contact",
   },
 ];
@@ -234,8 +234,8 @@ export default function HimaTemplate() {
           className="relative flex h-[100svh] min-h-[100svh] items-center justify-center overflow-hidden text-center text-[#f2efe8]"
         >
           <video
-            src="/src/assets/videos/HimaRestaurant.mp4"
-            poster="/src/assets/Images/HimaResto1.webp"
+            src="/videos/HimaRestaurant.mp4"
+            poster="/Images/HimaResto1.webp"
             autoPlay
             muted
             loop
@@ -244,14 +244,14 @@ export default function HimaTemplate() {
             className="absolute inset-0 size-full object-cover"
           >
             <source
-              src="/src/assets/videos/HimaRestaurant.mp4"
+              src="/videos/HimaRestaurant.mp4"
               type="video/mp4"
             />
           </video>
           <div className="absolute inset-0 bg-[#171410]/55" />
           <div className="relative z-10 mx-auto max-w-3xl px-5 sm:px-6">
             <img
-              src="/src/assets/Images/HimaLogo.png"
+              src="/Images/HimaLogo.png"
               alt="Hima Restaurant"
               className="mx-auto w-[48rem] sm:w-[72rem] lg:w-[108rem]"
             />
@@ -537,7 +537,7 @@ export default function HimaTemplate() {
               </a>
             </div>
             <Picture
-              src="/src/assets/Images/HimaResto2.jpg"
+              src="/Images/HimaResto2.jpg"
               alt="Restaurant interior with natural lighting and communal seating"
               ratio="aspect-[6/5]"
               tone="dark"
@@ -690,9 +690,21 @@ function LinktreeIcon({ size = 24, className }) {
 
 function Footer() {
   const socials = [
-    [InstagramIcon, "Instagram", "https://www.instagram.com/himabymenzel?stkn=N2x5cTRvdGF1Mm92"],
-    [TikTokIcon, "TikTok", "https://www.facebook.com/Himabymenzel/?ref=PROFILE_EDIT_xav_ig_profile_page_web#"],
-    [FacebookIcon, "Facebook", "https://www.facebook.com/Himabymenzel/?ref=PROFILE_EDIT_xav_ig_profile_page_web#"],
+    [
+      InstagramIcon,
+      "Instagram",
+      "https://www.instagram.com/himabymenzel?stkn=N2x5cTRvdGF1Mm92",
+    ],
+    [
+      TikTokIcon,
+      "TikTok",
+      "https://www.facebook.com/Himabymenzel/?ref=PROFILE_EDIT_xav_ig_profile_page_web#",
+    ],
+    [
+      FacebookIcon,
+      "Facebook",
+      "https://www.facebook.com/Himabymenzel/?ref=PROFILE_EDIT_xav_ig_profile_page_web#",
+    ],
     [LinktreeIcon, "Linktree", "https://linktr.ee/himabymenzel"],
   ];
   return (
@@ -703,8 +715,8 @@ function Footer() {
             Hima by<strong> Menzel</strong>
           </p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#726a5e]">
-            One Stop Destination at Kintamani
-Asian Fusion • Coffee • Suites Room
+            One Stop Destination at Kintamani Asian Fusion • Coffee • Suites
+            Room
           </p>
           <div className="mt-6 flex gap-3">
             {socials.map(([Icon, label, href]) => (
