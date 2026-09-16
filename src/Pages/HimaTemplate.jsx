@@ -234,7 +234,6 @@ export default function HimaTemplate() {
           className="relative flex h-[100svh] min-h-[100svh] items-center justify-center overflow-hidden text-center text-[#f2efe8]"
         >
           <video
-            src="/videos/HimaRestaurant.mp4"
             // poster="/Images/HimaResto1.webp"
             autoPlay
             muted
@@ -245,8 +244,9 @@ export default function HimaTemplate() {
           >
             <source
               src="/videos/HimaRestaurant.mp4"
-              type="video/mp4"
+              media="(min-width: 768px)"
             />
+            <source src="/videos/HimaRestaurant1.mp4" />
           </video>
           <div className="absolute inset-0 bg-[#171410]/55" />
           <div className="relative z-10 mx-auto max-w-3xl px-5 sm:px-6">
