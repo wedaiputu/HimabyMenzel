@@ -1,0 +1,674 @@
+[
+  {
+    "category": "Appetizer",
+    "name": "DSC04267_zrcoav",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295496/DSC04267_zrcoav.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04373_r3best",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295484/DSC04373_r3best.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04349_b3pma6",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295483/DSC04349_b3pma6.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04268_mnfr4b",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295444/DSC04268_mnfr4b.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04346_bgbdzk",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295441/DSC04346_bgbdzk.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04150_objh1g",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295439/DSC04150_objh1g.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04143_rtwnd0",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295437/DSC04143_rtwnd0.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04263_x4priq",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295437/DSC04263_x4priq.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04181_p4qq3d",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295432/DSC04181_p4qq3d.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04261_zrkbcf",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295432/DSC04261_zrkbcf.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04174_trvcm7",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295431/DSC04174_trvcm7.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04177_qrbnsc",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295431/DSC04177_qrbnsc.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Appetizer",
+    "name": "DSC04269_jdkbbl",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295431/DSC04269_jdkbbl.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "Hot Cappucino",
+    "meta": "Description Here",
+    "price": "$3.00",
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295475/DSC04066_omrps8.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04353_u73yfp",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295469/DSC04353_u73yfp.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04129_tp18h3",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295469/DSC04129_tp18h3.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04060_qsdxih",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295469/DSC04060_qsdxih.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04330_xqgsw8",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295469/DSC04330_xqgsw8.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04106_eekcgl",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295468/DSC04106_eekcgl.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04099_dnrfne",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295468/DSC04099_dnrfne.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04123_lviy5q",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295468/DSC04123_lviy5q.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04091_jnyumf",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295468/DSC04091_jnyumf.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04086_x1iedv",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295467/DSC04086_x1iedv.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04082_dl987x",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295467/DSC04082_dl987x.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04072_nvxcv3",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295467/DSC04072_nvxcv3.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04088_a0osaz",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295467/DSC04088_a0osaz.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04065_hclrv3",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295466/DSC04065_hclrv3.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Coffe",
+    "name": "DSC04063_j42kei",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295466/DSC04063_j42kei.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Dessert",
+    "name": "DSC04192_dhpxgh",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295522/DSC04192_dhpxgh.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Dessert",
+    "name": "DSC04409_nwvxhp",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295522/DSC04409_nwvxhp.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Dessert",
+    "name": "DSC04404_cmcgwf",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295522/DSC04404_cmcgwf.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Dessert",
+    "name": "DSC04386_mcm7ej",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295521/DSC04386_mcm7ej.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Dessert",
+    "name": "DSC04382_v3ocjz",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295520/DSC04382_v3ocjz.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Dessert",
+    "name": "DSC04211_blhb9f",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295520/DSC04211_blhb9f.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Dessert",
+    "name": "DSC04210_httapr",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295519/DSC04210_httapr.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Dessert",
+    "name": "DSC04199_ljqudk",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295519/DSC04199_ljqudk.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Dessert",
+    "name": "DSC04198_rogeve",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295518/DSC04198_rogeve.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04332_sqxibv",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295571/DSC04332_sqxibv.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04310_ulofwv",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295570/DSC04310_ulofwv.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04306_cyzonn",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295570/DSC04306_cyzonn.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04299_p5rmns",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295569/DSC04299_p5rmns.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04294_ze5z8a",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295568/DSC04294_ze5z8a.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04289_dsobfq",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295567/DSC04289_dsobfq.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04283_l2e9hk",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295566/DSC04283_l2e9hk.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04274_x8aja1",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295566/DSC04274_x8aja1.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04256_smzigy",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295565/DSC04256_smzigy.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04252_t0hgbq",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295565/DSC04252_t0hgbq.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04246_veydd1",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295564/DSC04246_veydd1.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04242_gduldz",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295563/DSC04242_gduldz.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04238_onewa8",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295562/DSC04238_onewa8.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04236_es0bur",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295561/DSC04236_es0bur.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04228_zrmrnd",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295561/DSC04228_zrmrnd.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04221_jhllxj",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295560/DSC04221_jhllxj.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04136_s8cxmg",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295560/DSC04136_s8cxmg.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04213_plekxc",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295559/DSC04213_plekxc.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04190_m00bar",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295558/DSC04190_m00bar.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04186_xwxupo",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295558/DSC04186_xwxupo.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04167_bod7l3",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295557/DSC04167_bod7l3.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04160_bjafpu",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295556/DSC04160_bjafpu.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04166_mphctu",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295556/DSC04166_mphctu.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04156_qfwr2w",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295556/DSC04156_qfwr2w.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Fresh Juice",
+    "name": "DSC04121_bdpvj7",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295555/DSC04121_bdpvj7.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04439_nafaza",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295643/DSC04439_nafaza.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04434_nfi5vx",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295642/DSC04434_nfi5vx.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04424_g2jsle",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295641/DSC04424_g2jsle.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04402_eu6e5a",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295640/DSC04402_eu6e5a.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04400_w2nprk",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295639/DSC04400_w2nprk.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04396_af6mdw",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295638/DSC04396_af6mdw.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04381_sfi0xz",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295636/DSC04381_sfi0xz.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04365_h1bwb8",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295636/DSC04365_h1bwb8.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04362_nh77f4",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295627/DSC04362_nh77f4.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04360_ab7i3j",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295626/DSC04360_ab7i3j.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04360-2_ie751n",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295625/DSC04360-2_ie751n.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04359_xlswwe",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295606/DSC04359_xlswwe.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04356_ya8utf",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295604/DSC04356_ya8utf.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04348_qxaxbh",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295604/DSC04348_qxaxbh.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04344_hxahjs",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295602/DSC04344_hxahjs.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04340_rneaaf",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295601/DSC04340_rneaaf.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04322_snaakq",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295601/DSC04322_snaakq.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Mains",
+    "name": "DSC04316_jmaam5",
+    "meta": "",
+    "price": null,
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789295600/DSC04316_jmaam5.jpg",
+    "type": "image"
+  },
+  {
+    "category": "Recomended",
+    "name": "Steak",
+    "meta": "Price: 7$\nDescription: Fill description here",
+    "price": "Rp 78.000",
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789284664/food_pop_animation_ymsxuh.gif",
+    "type": "image"
+  },
+  {
+    "category": "Recomended",
+    "name": "Spicy Noodle",
+    "meta": "Description: Fill description here",
+    "price": "$8.00",
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789284663/5_1_wmbegq.gif",
+    "type": "image"
+  },
+  {
+    "category": "Recomended",
+    "name": "Hot Cappucino",
+    "meta": "Description here",
+    "price": "$3.00",
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789284663/food_animation_kj8qau.gif",
+    "type": "image"
+  },
+  {
+    "category": "Recomended",
+    "name": "Onion Ring",
+    "meta": "Description Here",
+    "price": "$3.00",
+    "img": "https://res.cloudinary.com/dimnv9sq5/image/upload/v1789284662/4_1_a7pexj.gif",
+    "type": "image"
+  }
+]
