@@ -235,7 +235,7 @@ export default function HimaTemplate() {
         >
           <video
             src="/videos/HimaRestaurant.mp4"
-            poster="/Images/HimaResto1.webp"
+            // poster="/Images/HimaResto1.webp"
             autoPlay
             muted
             loop
