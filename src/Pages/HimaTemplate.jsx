@@ -106,13 +106,13 @@ const JOURNAL = [
 ];
 const VENUES = [
   {
-    name: "Hima Petitenget",
+    name: "Hima Suites",
     tag: "Flagship dining room",
-    img: "/Images/HimaVenue1.mp4",
+    img: "/Images/HimaVenue1.jpg",
     href: "#contact",
   },
   {
-    name: "Hima Rooftop Bar",
+    name: "Hima Suites",
     tag: "Sundowners & small plates",
     img: "/Images/HimaVenue2.jpg",
     href: "#contact",
@@ -124,25 +124,25 @@ const VENUES = [
     href: "#contact",
   },
   {
-    name: "Hima Beach Club",
+    name: "Hima Suites",
     tag: "Sun loungers & seafood grill",
     img: "/Images/HimaVenue4.jpg",
     href: "#contact",
   },
   {
-    name: "Hima Wine Cellar",
+    name: "Hima Suites",
     tag: "Curated tastings & pairings",
     img: "/Images/HimaVenue5.jpg",
     href: "#contact",
   },
   {
-    name: "Hima Chef's Table",
+    name: "Hima Suites",
     tag: "Seasonal tasting menu at the pass",
     img: "/Images/HimaVenue6.jpg",
     href: "#contact",
   },
   {
-    name: "Hima Private Dining",
+    name: "Hima Suites",
     tag: "Celebrations & private gatherings",
     img: "/Images/HimaVenue7.jpg",
     href: "#contact",
