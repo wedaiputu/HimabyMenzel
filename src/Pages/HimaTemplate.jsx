@@ -108,7 +108,7 @@ const VENUES = [
   {
     name: "Hima Petitenget",
     tag: "Flagship dining room",
-    img: "/Images/HimaVenue1.jpg",
+    img: "/Images/HimaVenue1.mp4",
     href: "#contact",
   },
   {
