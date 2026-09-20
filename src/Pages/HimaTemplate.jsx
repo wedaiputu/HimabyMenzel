@@ -149,6 +149,21 @@ const VENUES = [
   },
 ];
 
+const HERO_VIDEO = {
+  desktop:
+    "https://res.cloudinary.com/dimnv9sq5/video/upload/v1789888455/HimaRestaurant_xz3rpf.mp4",
+  mobile:
+    "https://res.cloudinary.com/dimnv9sq5/video/upload/v1789888455/HimaRestaurant1_yj94cx.mp4",
+};
+// Cloudinary makes a still frame from the video when the extension is .jpg.
+// Change so_0 (seconds) if the first frame is dark.
+const HERO_POSTER = {
+  desktop:
+    "https://res.cloudinary.com/dimnv9sq5/video/upload/so_0,w_1600,q_auto/v1789888455/HimaRestaurant_xz3rpf.jpg",
+  mobile:
+    "https://res.cloudinary.com/dimnv9sq5/video/upload/so_0,w_800,q_auto/v1789888455/HimaRestaurant1_yj94cx.jpg",
+};
+
 const eyebrow = "mb-4 text-xs uppercase tracking-[0.12em] text-[#726a5e]";
 const section = "mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-10 lg:py-24";
 const title = "font-serif text-3xl leading-tight sm:text-4xl";
@@ -159,31 +174,17 @@ export default function HimaTemplate() {
   const [showAllDishes, setShowAllDishes] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
-  const [loaderGone, setLoaderGone] = useState(false);
   const videoRef = useRef(null);
 
-  // Hold the page behind a loader until the hero video can play.
   useEffect(() => {
     const video = videoRef.current;
-    if (video) {
-      // React doesn't always set the muted attribute, which can block autoplay.
-      video.muted = true;
-      // Video may already be buffered before the listener attached (cache hit).
-      if (video.readyState >= 3) setVideoReady(true);
-      video.play().catch(() => {});
-    }
-    // Never trap the visitor: reveal anyway if the video is very slow or fails.
-    const fallback = setTimeout(() => setVideoReady(true), 10000);
-    return () => clearTimeout(fallback);
+    if (!video) return;
+    // React doesn't always set the muted attribute, which can block autoplay.
+    video.muted = true;
+    // Video may already be buffered before the listener attached (cache hit).
+    if (video.readyState >= 3) setVideoReady(true);
+    video.play().catch(() => {});
   }, []);
-
-  // Lock scrolling while the loader is showing.
-  useEffect(() => {
-    document.body.style.overflow = videoReady ? "" : "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [videoReady]);
 
   useEffect(() => {
     function onScroll() {
@@ -207,17 +208,6 @@ export default function HimaTemplate() {
 
   return (
     <div className="min-h-screen overflow-x-clip bg-[#d7cbb0] font-sans text-[#1c1a16] antialiased">
-      {!loaderGone && (
-        <div
-          aria-hidden={videoReady}
-          onTransitionEnd={() => videoReady && setLoaderGone(true)}
-          className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#d7cbb0] transition-opacity duration-700 ${
-            videoReady ? "pointer-events-none opacity-0" : "opacity-100"
-          }`}
-        >
-          <div className="size-10 animate-spin rounded-full border-2 border-[#1c1a16]/20 border-t-[#1c1a16]" />
-        </div>
-      )}
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
           scrolled || menuOpen
@@ -270,22 +260,30 @@ export default function HimaTemplate() {
           id="top"
           className="relative flex h-[100svh] min-h-[100svh] items-center justify-center overflow-hidden text-center text-[#f2efe8]"
         >
+          {/* Poster: shows instantly while the video loads */}
+          <picture>
+            <source media="(min-width: 768px)" srcSet={HERO_POSTER.desktop} />
+            <img
+              src={HERO_POSTER.mobile}
+              alt=""
+              fetchPriority="high"
+              className="absolute inset-0 size-full object-cover"
+            />
+          </picture>
           <video
             ref={videoRef}
             onCanPlay={() => setVideoReady(true)}
-            onError={() => setVideoReady(true)}
             autoPlay
             muted
             loop
             playsInline
             preload="auto"
-            className="absolute inset-0 size-full object-cover"
+            className={`absolute inset-0 size-full object-cover transition-opacity duration-700 ${
+              videoReady ? "opacity-100" : "opacity-0"
+            }`}
           >
-            <source
-              src="https://res.cloudinary.com/dimnv9sq5/video/upload/v1789888455/HimaRestaurant_xz3rpf.mp4"
-              media="(min-width: 768px)"
-            />
-            <source src="https://res.cloudinary.com/dimnv9sq5/video/upload/v1789888455/HimaRestaurant1_yj94cx.mp4" />
+            <source src={HERO_VIDEO.desktop} media="(min-width: 768px)" />
+            <source src={HERO_VIDEO.mobile} />
           </video>
           <div className="absolute inset-0 bg-[#171410]/55" />
           <div className="relative z-10 mx-auto max-w-3xl px-5 sm:px-6">
