@@ -243,10 +243,10 @@ export default function HimaTemplate() {
             className="absolute inset-0 size-full object-cover"
           >
             <source
-              src="/videos/HimaRestaurant.mp4"
+              src="https://res.cloudinary.com/dimnv9sq5/video/upload/v1789888455/HimaRestaurant_xz3rpf.mp4"
               media="(min-width: 768px)"
             />
-            <source src="/videos/HimaRestaurant1.mp4" />
+            <source src="https://res.cloudinary.com/dimnv9sq5/video/upload/v1789888455/HimaRestaurant1_yj94cx.mp4" />
           </video>
           <div className="absolute inset-0 bg-[#171410]/55" />
           <div className="relative z-10 mx-auto max-w-3xl px-5 sm:px-6">
