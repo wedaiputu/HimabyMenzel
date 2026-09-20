@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, Play, X } from "lucide-react";
 import MENU from "../assets/json/HimaRestaurant.json";
 
@@ -158,6 +158,32 @@ export default function HimaTemplate() {
   const [tab, setTab] = useState("Mains");
   const [showAllDishes, setShowAllDishes] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
+  const [loaderGone, setLoaderGone] = useState(false);
+  const videoRef = useRef(null);
+
+  // Hold the page behind a loader until the hero video can play.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      // React doesn't always set the muted attribute, which can block autoplay.
+      video.muted = true;
+      // Video may already be buffered before the listener attached (cache hit).
+      if (video.readyState >= 3) setVideoReady(true);
+      video.play().catch(() => {});
+    }
+    // Never trap the visitor: reveal anyway if the video is very slow or fails.
+    const fallback = setTimeout(() => setVideoReady(true), 10000);
+    return () => clearTimeout(fallback);
+  }, []);
+
+  // Lock scrolling while the loader is showing.
+  useEffect(() => {
+    document.body.style.overflow = videoReady ? "" : "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [videoReady]);
 
   useEffect(() => {
     function onScroll() {
@@ -181,6 +207,17 @@ export default function HimaTemplate() {
 
   return (
     <div className="min-h-screen overflow-x-clip bg-[#d7cbb0] font-sans text-[#1c1a16] antialiased">
+      {!loaderGone && (
+        <div
+          aria-hidden={videoReady}
+          onTransitionEnd={() => videoReady && setLoaderGone(true)}
+          className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#d7cbb0] transition-opacity duration-700 ${
+            videoReady ? "pointer-events-none opacity-0" : "opacity-100"
+          }`}
+        >
+          <div className="size-10 animate-spin rounded-full border-2 border-[#1c1a16]/20 border-t-[#1c1a16]" />
+        </div>
+      )}
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
           scrolled || menuOpen
@@ -234,7 +271,9 @@ export default function HimaTemplate() {
           className="relative flex h-[100svh] min-h-[100svh] items-center justify-center overflow-hidden text-center text-[#f2efe8]"
         >
           <video
-            // poster="/Images/HimaResto1.webp"
+            ref={videoRef}
+            onCanPlay={() => setVideoReady(true)}
+            onError={() => setVideoReady(true)}
             autoPlay
             muted
             loop
