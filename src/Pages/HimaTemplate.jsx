@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Menu, Play, X } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, Menu, Play, X } from "lucide-react";
 import MENU from "../assets/json/HimaRestaurant.json";
 
 const MENU_CATEGORIES = [...new Set(MENU.map((item) => item.category))];
@@ -164,6 +164,14 @@ const HERO_POSTER = {
     "https://res.cloudinary.com/dimnv9sq5/video/upload/so_0,w_800,q_auto/v1789888455/HimaRestaurant1_yj94cx.jpg",
 };
 
+// Photos live in /public/Images/HimaResto/ (1.jpeg to 6.jpeg).
+const RESTO_IMAGES = Array.from({ length: 6 }, (_, i) => ({
+  src: `/Images/HimaResto/${i + 1}.jpeg`,
+  alt: `Hima restaurant photo ${i + 1}`,
+}));
+// The first tile plays this video instead (1.jpeg is used as its poster).
+const RESTO_VIDEO = "/videos/HimaResto/HimaResto.mp4";
+
 const eyebrow = "mb-4 text-xs uppercase tracking-[0.12em] text-[#726a5e]";
 const section = "mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-10 lg:py-24";
 const title = "font-serif text-3xl leading-tight sm:text-4xl";
@@ -174,7 +182,9 @@ export default function HimaTemplate() {
   const [showAllDishes, setShowAllDishes] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const [lightbox, setLightbox] = useState(null);
   const videoRef = useRef(null);
+  const lightboxOpen = lightbox !== null;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -185,6 +195,22 @@ export default function HimaTemplate() {
     if (video.readyState >= 3) setVideoReady(true);
     video.play().catch(() => {});
   }, []);
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const count = RESTO_IMAGES.length;
+    function onKey(e) {
+      if (e.key === "Escape") setLightbox(null);
+      if (e.key === "ArrowRight") setLightbox((i) => (i + 1) % count);
+      if (e.key === "ArrowLeft") setLightbox((i) => (i - 1 + count) % count);
+    }
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightboxOpen]);
 
   useEffect(() => {
     function onScroll() {
@@ -309,45 +335,110 @@ export default function HimaTemplate() {
               surroundings, HIMA offers a memorable mountain experience in Bali.
             </p>
           </div>
-          {/* <div className="border-t border-[#dad3c4] bg-[#171410] text-[#f2efe8]">
-            <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 py-12 sm:px-6 md:grid-cols-4 lg:px-10 lg:py-16">
-              {STATS.map((stat) => (
-                <div key={stat.l}>
-                  <p className="font-serif text-4xl">{stat.n}</p>
-                  <p className="mt-2 max-w-[18ch] text-sm leading-relaxed text-[#a69c8c]">
-                    {stat.l}
-                  </p>
-                </div>
+        </section>
+        <section id="resto" className="scroll-mt-12 border-t border-[#dad3c4]">
+          <div
+            className={`${section} grid items-center gap-10 lg:grid-cols-2 lg:gap-16`}
+          >
+            <div className="text-center lg:text-left">
+              {/* <p className={eyebrow}>Restaurant</p> */}
+              <h2 className={title}>Hima Restaurant</h2>
+              <p className="mt-5 leading-7 text-[#726a5e]">
+                HIMA Restaurant is an Asian Fusion Bistro that brings together contemporary Asian flavors, a stylish bistro atmosphere, and a thoughtfully designed bar experience. Offering a diverse selection of Asian-inspired dishes, HIMA is committed to serving quality cuisine in a welcoming and refined setting, with a no-pork and no-lard concept. Beyond dining, HIMA provides Suite Rooms for a comfortable stay and a dedicated prayer room (Mushola), making it a convenient and accommodating destination for dining, relaxation, and hospitality.
+              </p>
+            </div>
+            <div className="grid auto-rows-[160px] grid-flow-dense grid-cols-2 gap-2 sm:auto-rows-[220px] sm:gap-3 md:auto-rows-[200px] md:grid-cols-4 lg:auto-rows-[120px] lg:gap-2 xl:auto-rows-[140px]">
+              {RESTO_IMAGES.map((img, index) => (
+                <button
+                  key={img.src}
+                  type="button"
+                  onClick={() => setLightbox(index)}
+                  aria-label={index === 0 ? "View video" : `View photo: ${img.alt}`}
+                  className={`group relative overflow-hidden rounded-lg bg-[#c9bd9f] ${
+                    index === 0 || index === 3 ? "col-span-2 row-span-2" : ""
+                  }`}
+                >
+                  {index === 0 ? (
+                    <LazyLoopVideo
+                      src={RESTO_VIDEO}
+                      poster={img.src}
+                      className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  ) : (
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  )}
+                  <span className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/15" />
+                </button>
               ))}
             </div>
-          </div> */}
-        </section>
-        <section id="about" className="scroll-mt-24 border-t border-[#dad3c4]">
-          <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:px-6 lg:py-24">
-            <p className={eyebrow}>Suite Rooms</p>
-            <h2 className={title}>Explore our selection of venue</h2>
-            {/* <p className="mx-auto mt-5 max-w-xl leading-7 text-[#726a5e]">
-              Founded with a simple belief: dining should feel personal.
-              Every element of our restaurant has been thoughtfully curated —
-              natural light floods through open windows, our wooden tables are
-              built to encourage lingering, and the acoustics create an
-              intimacy that makes strangers feel like friends. This is a space
-              designed not just for eating, but for living.
-            </p> */}
           </div>
-          {/* <div className="border-t border-[#dad3c4] bg-[#171410] text-[#f2efe8]">
-            <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 py-12 sm:px-6 md:grid-cols-4 lg:px-10 lg:py-16">
-              {STATS.map((stat) => (
-                <div key={stat.l}>
-                  <p className="font-serif text-4xl">{stat.n}</p>
-                  <p className="mt-2 max-w-[18ch] text-sm leading-relaxed text-[#a69c8c]">
-                    {stat.l}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div> */}
         </section>
+        {lightboxOpen && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Restaurant photo viewer"
+            onClick={() => setLightbox(null)}
+            className="fixed inset-0 z-[90] flex items-center justify-center bg-black/90 p-4 sm:p-10"
+          >
+            <button
+              type="button"
+              onClick={() => setLightbox(null)}
+              aria-label="Close"
+              className="absolute right-4 top-4 p-2 text-white/80 transition-colors hover:text-white sm:right-8 sm:top-8"
+            >
+              <X size={28} />
+            </button>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightbox((i) => (i - 1 + RESTO_IMAGES.length) % RESTO_IMAGES.length);
+              }}
+              aria-label="Previous photo"
+              className="absolute left-2 p-2 text-white/80 transition-colors hover:text-white sm:left-6"
+            >
+              <ChevronLeft size={36} />
+            </button>
+            {lightbox === 0 ? (
+              <video
+                key="resto-video"
+                src={RESTO_VIDEO}
+                poster={RESTO_IMAGES[0].src}
+                controls
+                autoPlay
+                loop
+                playsInline
+                onClick={(e) => e.stopPropagation()}
+                className="max-h-full max-w-full rounded object-contain"
+              />
+            ) : (
+              <img
+                src={RESTO_IMAGES[lightbox].src}
+                alt={RESTO_IMAGES[lightbox].alt}
+                onClick={(e) => e.stopPropagation()}
+                className="max-h-full max-w-full rounded object-contain"
+              />
+            )}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightbox((i) => (i + 1) % RESTO_IMAGES.length);
+              }}
+              aria-label="Next photo"
+              className="absolute right-2 p-2 text-white/80 transition-colors hover:text-white sm:right-6"
+            >
+              <ChevronRight size={36} />
+            </button>
+          </div>
+        )}
         <section id="venue" className="scroll-mt-24 border-t border-[#dad3c4]">
           <div className="mx-auto max-w-7xl px-5 pt-16 sm:px-6 lg:px-10 lg:pt-24">
             {/* <p className={eyebrow}>Venues</p>
@@ -358,7 +449,7 @@ export default function HimaTemplate() {
           <div className="grid gap-1 lg:grid-cols-3">
             {VENUES.map((venue) => (
               <a
-                key={venue.name}
+                key={venue.img}
                 href={venue.href}
                 className="group relative block h-[100svh] overflow-hidden"
               >
@@ -585,6 +676,37 @@ export default function HimaTemplate() {
       <Footer />
       <WhatsAppButton />
     </div>
+  );
+}
+
+// Loads and plays only while on screen, so it doesn't compete with the hero video.
+function LazyLoopVideo({ src, poster, className }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    video.muted = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { threshold: 0.25 },
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <video
+      ref={ref}
+      src={src}
+      poster={poster}
+      muted
+      loop
+      playsInline
+      preload="none"
+      className={className}
+    />
   );
 }
 
