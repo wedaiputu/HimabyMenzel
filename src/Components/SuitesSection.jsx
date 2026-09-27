@@ -1,5 +1,6 @@
 import Art from "../data/Art";
 import { SUITE_STRIP_PHOTOS } from "../data/photos";
+import { Link } from 'react-router-dom';
 
 export default function SuitesSection({ scrollTo, suiteCountWord }) {
   return (
@@ -36,12 +37,9 @@ export default function SuitesSection({ scrollTo, suiteCountWord }) {
       </div>
 
       <div className="suites-screen-foot">
-        <button
-          className="pill-btn"
-          onClick={() => scrollTo("/Suites")}
-        >
+        <Link to="/suites" className="pill-btn">
           Book Now
-        </button>
+        </Link>
       </div>
     </section>
   );
