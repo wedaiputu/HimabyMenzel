@@ -1,15 +1,15 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HimaTemplate from "./Pages/HimaTemplate";
-import HimaTemplate2 from "./Pages/HimaTemplate2";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HimaTemplate3 from "./Pages/HimaTemplate3";
+import MenuPage from "./Pages/MenuPage";
+import SuitesPage from "./Pages/SuitesPage";
 
-export default function AppRoute() {
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HimaTemplate3 />} />
-        <Route path="/1" element={<HimaTemplate />} />
-        <Route path="/2" element={<HimaTemplate2/>} />
+        <Route path="/Menus" element={<MenuPage />} />
+        <Route path="/Suites" element={<SuitesPage />} />
       </Routes>
     </BrowserRouter>
   );
