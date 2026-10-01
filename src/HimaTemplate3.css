@@ -1,7 +1,29 @@
 /* ==========================================
    FONT IMPORTS
    ========================================== */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Meddon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Meddon&display=swap');
+
+/* HT Grotesk is not on Google Fonts - self-host it and point these urls
+   to your font files (Light = 300, Medium = 500). */
+@font-face {
+  font-family: "HT Grotesk";
+  src: local("HT Grotesk Light"), local("HTGrotesk-Light"),
+       url("fonts/HTGrotesk-Light.woff2") format("woff2"),
+       url("fonts/HTGrotesk-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HT Grotesk";
+  src: local("HT Grotesk Medium"), local("HTGrotesk-Medium"),
+       url("fonts/HTGrotesk-Medium.woff2") format("woff2"),
+       url("fonts/HTGrotesk-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ==========================================
    THEME VARIABLES & SECTION FONT MAPPING
@@ -20,15 +42,15 @@
   --line-dark: rgba(247, 244, 236, 0.2);
 
   /* Global Fonts */
-  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-body: "HT Grotesk", sans-serif;
   --font-script: "Meddon", cursive;
 
   /* Section-Specific Display Fonts */
-  --font-hero-heading: "Italiana", serif;
-  --font-dining-heading: "Italiana", serif;
-  --font-suites-heading: "Playfair Display", serif;
-  --font-events-heading: "Cinzel", serif;
-  --font-book-heading: "Italiana", serif;
+  --font-hero-heading: "HT Grotesk", sans-serif;
+  --font-dining-heading: "HT Grotesk", sans-serif;
+  --font-suites-heading: "HT Grotesk", sans-serif;
+  --font-events-heading: "HT Grotesk", sans-serif;
+  --font-book-heading: "HT Grotesk", sans-serif;
 }
 
 /* ==========================================
@@ -45,6 +67,7 @@
 
 .hima-page {
   font-family: var(--font-body);
+  font-weight: 300; /* HT Grotesk Light for paragraphs / body */
   background: var(--dark);
   color: var(--ink);
   min-height: 100vh;
@@ -53,6 +76,19 @@
 
 .hima-page button {
   font-family: inherit;
+}
+
+.hima-page h1,
+.hima-page h2,
+.hima-page h3,
+.hima-page h4,
+.hima-page h5,
+.hima-page h6 {
+  font-weight: 500; /* HT Grotesk Medium for headings */
+}
+
+.hima-page p {
+  font-weight: 300;
 }
 
 .hima-page :focus-visible {
@@ -73,6 +109,7 @@ html {
    ========================================== */
 .serif {
   font-family: var(--font-dining-heading);
+  font-weight: 500;
 }
 
 .script {
@@ -88,7 +125,7 @@ html {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .eyebrow-num .num {
@@ -123,7 +160,7 @@ html {
   background: var(--ink);
   color: var(--cream);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
@@ -183,6 +220,7 @@ html {
 
 .nav-logo-main {
   font-family: var(--font-hero-heading);
+  font-weight: 500;
   font-size: 21px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -193,7 +231,7 @@ html {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   opacity: 0.85;
 }
 
@@ -290,7 +328,7 @@ html {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
@@ -323,7 +361,7 @@ html {
 
 .hero-lockup h1 {
   font-family: var(--font-hero-heading);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(46px, 7vw, 84px);
   letter-spacing: 0.01em;
   line-height: 0.95;
@@ -340,7 +378,7 @@ html {
   font-size: 12.5px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .hero-bar {
@@ -355,6 +393,7 @@ html {
 
 .hero-bar-left p {
   font-family: var(--font-hero-heading);
+  font-weight: 300;
   font-size: clamp(18px, 1.6vw, 22px);
   max-width: 30ch;
   margin-bottom: 22px;
@@ -376,6 +415,7 @@ html {
 
 .hero-bar-right p {
   font-family: var(--font-hero-heading);
+  font-weight: 300;
   font-style: italic;
   font-size: clamp(17px, 1.5vw, 21px);
   max-width: 30ch;
@@ -384,7 +424,7 @@ html {
 .hero-bar-right .hours {
   font-size: 12.5px;
   letter-spacing: 0.14em;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* ==========================================
@@ -424,7 +464,7 @@ html {
 
 .screen-copy h2 {
   font-family: var(--font-hero-heading);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(44px, 5.6vw, 76px);
   line-height: 0.98;
   margin: 22px 0 26px;
@@ -500,7 +540,7 @@ html {
 
 .dining-heading h2 {
   font-family: var(--font-dining-heading);
-  font-weight: 400;
+  font-weight: 500;
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -511,7 +551,7 @@ html {
 
 .dining-heading h2 .small {
   font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(16px, 1.7vw, 22px);
   letter-spacing: 0.01em;
 }
@@ -528,7 +568,7 @@ html {
   font-size: 12.5px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* ==========================================
@@ -547,7 +587,7 @@ html {
 
 .suites-screen-head h2 {
   font-family: var(--font-suites-heading);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(44px, 5.6vw, 76px);
   line-height: 0.98;
   margin: 22px 0 20px;
@@ -602,7 +642,7 @@ html {
 
 .events-head h2 {
   font-family: var(--font-events-heading);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(36px, 5.4vw, 70px);
   line-height: 1.04;
   margin-top: 18px;
@@ -654,13 +694,13 @@ html {
 .events-col .idx {
   font-size: 12px;
   color: var(--amber);
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.1em;
 }
 
 .events-col h3 {
   font-family: var(--font-events-heading);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 19px;
   margin: 10px 0 8px;
 }
@@ -720,7 +760,7 @@ html {
 
 .beauty-caption h3 {
   font-family: var(--font-events-heading);
-  font-weight: 400;
+  font-weight: 500;
   font-style: italic;
   font-size: clamp(32px, 4.6vw, 58px);
   margin-top: 10px;
@@ -784,7 +824,7 @@ html {
   display: block;
   font-family: var(--font-body);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   color: #fff;
   margin-top: 16px;
 }
@@ -864,7 +904,7 @@ html {
 .map-pin .label {
   color: #c83232;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -878,7 +918,7 @@ html {
   background: rgba(255, 255, 255, 0.78);
   color: #555;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .map-chip .swatch {
@@ -920,7 +960,7 @@ html {
   text-decoration: none;
   font-family: var(--font-body);
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.08em;
   transition: opacity 0.2s ease;
 }
@@ -953,7 +993,7 @@ html {
   color: #000;
   font-family: var(--font-body);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
@@ -997,7 +1037,7 @@ html {
 
 .section-header h2 {
   font-family: var(--font-dining-heading);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(34px, 4vw, 50px);
   margin-top: 12px;
 }
@@ -1064,12 +1104,13 @@ html {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--amber);
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 6px;
 }
 
 .menu-name {
   font-family: var(--font-dining-heading);
+  font-weight: 500;
   font-size: 18px;
   margin-bottom: 6px;
 }
