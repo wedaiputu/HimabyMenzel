@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import Navbar from "../Components/Navbar";
+import { useNavigate } from "react-router-dom";
+import Navbar2 from "../Components/Navbar2";
 import Footer from "../Components/Footer";
 import { NAV_ITEMS } from "../data/navItems";
 import { categories, MENU_ITEMS } from "../data/menu";
@@ -583,6 +584,30 @@ function Tray({ orders, onAdd, onRemove, open, setOpen, onPlace, placed }) {
   );
 }
 
+/* After going to "/", wait until the home page has rendered the section with this id, then bring it into view.
+   scrollIntoView works whichever element scrolls (window or a wrapper with scroll-snap), unlike window.scrollTo.
+   If no element has that id the visitor simply stays at the top of the home page. */
+function scrollHomeSection(id) {
+  let tries = 0;
+  setTimeout(() => {
+    const timer = setInterval(() => {
+      tries += 1;
+      const el = document.getElementById(id);
+      if (el) {
+        clearInterval(timer);
+        const jump = () => el.scrollIntoView({ behavior: "auto", block: "start" });
+        jump();
+        // images / layout can shift right after the page loads, so re-align if we drifted
+        [300, 800].forEach((ms) =>
+          setTimeout(() => {
+            if (Math.abs(el.getBoundingClientRect().top) > 8) jump();
+          }, ms)
+        );
+      } else if (tries > 60) clearInterval(timer);
+    }, 50);
+  }, 100);
+}
+
 /* ----------------------------------------------------------------- PAGE */
 export default function MenuTemplate2() {
   const labels = categories.map(labelOf);
@@ -593,7 +618,16 @@ export default function MenuTemplate2() {
   const [trayOpen, setTrayOpen] = useState(false);
   const [placed, setPlaced] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const navigate = useNavigate();
   const rootRef = useRef(null);
+
+  /* this page has no home sections, so a nav label goes back to "/" and tells the home page which section to open */
+  const goHome = (id) => {
+    setMobileMenu(false);
+    navigate("/", { state: { scrollTo: id } });
+    scrollHomeSection(id); // works on its own: waits for the home section with this id, then scrolls to it
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -705,7 +739,9 @@ export default function MenuTemplate2() {
         <i className="m2-spot" />
       </div>
 
-      <Navbar navItems={NAV_ITEMS} />
+      <div className="m2-nav">
+        <Navbar2 navItems={NAV_ITEMS} mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} scrollTo={goHome} />
+      </div>
 
       <main className="m2-main" style={{ paddingTop: NAV_OFFSET }}>
         <Hero
@@ -791,6 +827,8 @@ const CSS = `
 @keyframes m2-d2{to{transform:translate3d(-12vmax,-8vmax,0) scale(1.1)}}
 
 .m2-main{position:relative;z-index:1;width:100%;box-sizing:border-box}
+/* keep the navbar above the page layers so its links receive clicks */
+.m2-nav{position:relative;z-index:60}
 
 /* hero */
 .m2-hero{position:relative;min-height:620px;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none}
