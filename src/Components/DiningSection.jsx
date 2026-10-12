@@ -26,7 +26,7 @@ export default function DiningSection() {
       <div className="dining-foot">
         <button
           className="pill-btn pill-btn--light"
-          onClick={() => navigate("/Menus2")}
+          onClick={() => navigate("/Menus")}
         >
           Check Menu
         </button>
