@@ -9,6 +9,7 @@ import MenuTemplate4 from "./Pages/MenuTemplate4";
 
 export default function App() {
   return (
+    // BrowserRouter is used to enable routing in the application. It wraps the entire application and allows for navigation between different pages without reloading the page.
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HimaTemplate3 />} />
