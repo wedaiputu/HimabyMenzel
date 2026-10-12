@@ -12,12 +12,12 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HimaTemplate3 />} />
-        <Route path="/Menus" element={<MenuPage />} />
+        <Route path="/Menus" element={<MenuTemplate4 />} />
         <Route path="/Suites" element={<SuitesPage />} />
         <Route path="/Menus1" element={<MenuTemplate />} />
         <Route path="/Menus2" element={<MenuTemplate2 />} />
         <Route path="/Menus3" element={<MenuTemplate3 />} />
-        <Route path="/Menus4" element={<MenuTemplate4 />} />
+        <Route path="/Menus4" element={<MenusPage />} />
       </Routes>
     </BrowserRouter>
   );
