@@ -5,9 +5,9 @@
 
 export const HERO_VIDEO = {
   desktop:
-    "https://res.cloudinary.com/dimnv9sq5/video/upload/v1789888455/HimaRestaurant_xz3rpf.mp4",
+    "https://res.cloudinary.com/dimnv9sq5/video/upload/v1791960014/revisi_2_1_q1ugdw.mp4",
   mobile:
-    "https://res.cloudinary.com/dimnv9sq5/video/upload/v1789888455/HimaRestaurant1_yj94cx.mp4",
+    "https://res.cloudinary.com/dimnv9sq5/video/upload/v1791960014/revisi_2_1_q1ugdw.mp4",
 };
 
 export const HERO_POSTER = {
