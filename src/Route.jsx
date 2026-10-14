@@ -6,6 +6,8 @@ import MenuTemplate from "./Pages/MenuTemplate";
 import MenuTemplate2 from "./Pages/MenuTemplate2";
 import MenuTemplate3 from "./Pages/MenuTemplate3";  
 import MenuTemplate4 from "./Pages/MenuTemplate4";
+import MenuTemplate5 from "./Pages/MenuTemplate5";
+import MenuTemplate6 from "./Pages/MenuTemplate6";
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
         <Route path="/Menus2" element={<MenuTemplate2 />} />
         <Route path="/Menus3" element={<MenuTemplate3 />} />
         <Route path="/Menus4" element={<MenuTemplate4 />} />
+        <Route path="/Menus5" element={<MenuTemplate5 />} />
+        <Route path="/Menus6" element={<MenuTemplate6/>} />
       </Routes>
     </BrowserRouter>
   );

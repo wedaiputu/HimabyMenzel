@@ -50,6 +50,15 @@ export default function MenuTemplate4() {
   const stageRef = useRef(null);
   const railRef = useRef(null);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Navbar turns transparent as soon as the page starts moving
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -101,7 +110,7 @@ export default function MenuTemplate4() {
   const progress = useMemo(() => ((i + 1) / total) * 100, [i, total]);
 
   return (
-    <div className="hima-page menu-page">
+    <div className={`hima-page menu-page${scrolled ? " is-scrolled" : ""}`}>
       <Navbar2
         navItems={NAV_ITEMS}
         mobileMenu={mobileMenu}
@@ -180,9 +189,9 @@ export default function MenuTemplate4() {
             <i style={{ transform: `scaleX(${progress / 100})` }} />
           </div>
           <div className="hm-actions">
-            <button onClick={() => go(i - 1)} disabled={i === 0}>Previous page</button>
-            <button onClick={() => go(i + 1)} disabled={i === total - 1}>Next page</button>
-            <button onClick={() => setOpen(true)}>Read full size</button>
+            <button onClick={() => go(i - 1)} disabled={i === 0}>Previous</button>
+            <button onClick={() => go(i + 1)} disabled={i === total - 1}>Next</button>
+            <button onClick={() => setOpen(true)}>Full size</button>
           </div>
         </aside>
       </section>
