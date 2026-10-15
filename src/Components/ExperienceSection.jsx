@@ -1,5 +1,4 @@
-import Art from "../data/Art";
-import { EXPERIENCE_PHOTO } from "../data/photos";
+import { EXPERIENCE_VIDEO, EXPERIENCE_VIDEO_POSTER } from "../data/photos";
 
 export default function ExperienceSection() {
   return (
@@ -23,10 +22,15 @@ export default function ExperienceSection() {
         </p>
       </div>
       <div className="screen-photo">
-        <Art
-          src={EXPERIENCE_PHOTO}
-          alt="Guests relaxing on the terrace under an umbrella"
-          variant={1}
+        <video
+          src={EXPERIENCE_VIDEO}
+          poster={EXPERIENCE_VIDEO_POSTER}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Guests relaxing on the terrace at Hima"
         />
       </div>
     </section>

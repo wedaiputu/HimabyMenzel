@@ -17,8 +17,12 @@ export const HERO_POSTER = {
     "https://res.cloudinary.com/dimnv9sq5/video/upload/so_2,w_800,q_auto/v1789888455/HimaRestaurant1_yj94cx.jpg",
 };
 
-export const EXPERIENCE_PHOTO =
-  "https://res.cloudinary.com/dimnv9sq5/image/upload/v1790495733/Pixflux.AI_1790495670687_1_cbi0o3.png"; // section 01, right-hand photo
+export const EXPERIENCE_VIDEO =
+  "https://res.cloudinary.com/dimnv9sq5/video/upload/v1792051289/revisi_3_1_ugbtj1.mp4"; // section 01, right-hand video
+
+// First frame of the video, shown while it loads (same trick as your hero poster)
+export const EXPERIENCE_VIDEO_POSTER =
+  "https://res.cloudinary.com/dimnv9sq5/video/upload/so_0,w_1200,q_auto/v1792051289/revisi_3_1_ugbtj1.jpg";
 export const DINING_PHOTO = "/Images/HimaResto/DineImage.jpeg"; // section 02, full-bleed background
 
 export const SUITE_STRIP_PHOTOS = [

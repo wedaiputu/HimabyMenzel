@@ -43,7 +43,7 @@ export default function SuitesDetailSection() {
                   <strong>{s.price}</strong> per night
                 </div>
                 <a
-                  className="pill-btn pill-btn--outline"
+                  className="pill-btn"
                   href={wa(
                     `Hello, I would like to book the ${s.name}. Is it available?`,
                   )}

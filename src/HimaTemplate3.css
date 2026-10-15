@@ -8,8 +8,7 @@
 @font-face {
   font-family: "HT Grotesk";
   src: local("HT Grotesk Light"), local("HTGrotesk-Light"),
-       url("fonts/HTGrotesk-Light.woff2") format("woff2"),
-       url("fonts/HTGrotesk-Light.woff") format("woff");
+       url("/fonts/hk-grotesk.light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -18,9 +17,19 @@
 @font-face {
   font-family: "HT Grotesk";
   src: local("HT Grotesk Medium"), local("HTGrotesk-Medium"),
-       url("fonts/HTGrotesk-Medium.woff2") format("woff2"),
-       url("fonts/HTGrotesk-Medium.woff") format("woff");
+       url("/fonts/hk-grotesk.medium.ttf") format("truetype");
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Analogist is not on Google Fonts - self-host it and point these urls
+   to your font files. Used for H1 and H2. */
+@font-face {
+  font-family: "Analogist";
+  src: local("Analogist"), local("Analogist-Regular"),
+       url("/fonts/Analogist.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -44,6 +53,7 @@
   /* Global Fonts */
   --font-body: "HT Grotesk", sans-serif;
   --font-script: "Meddon", cursive;
+  --font-h1: "Analogist", "HT Grotesk", sans-serif;
 
   /* Section-Specific Display Fonts */
   --font-hero-heading: "HT Grotesk", sans-serif;
@@ -87,7 +97,14 @@
   font-weight: 500; /* HT Grotesk Medium for headings */
 }
 
+.hima-page h1,
+.hima-page h2 {
+  font-family: var(--font-h1); /* Analogist */
+  font-weight: 400; /* Analogist has a single weight - avoids faux bold */
+}
+
 .hima-page p {
+  font-family: var(--font-body); /* HT Grotesk */
   font-weight: 300;
 }
 
@@ -108,8 +125,8 @@ html {
    TYPOGRAPHY UTILITIES
    ========================================== */
 .serif {
-  font-family: var(--font-dining-heading);
-  font-weight: 500;
+  font-family: var(--font-h1); /* Analogist */
+  font-weight: 400;
 }
 
 .script {
@@ -256,10 +273,15 @@ html {
 
 .mobile-toggle {
   display: none;
+  position: relative;
+  z-index: 101;
   border: none;
   background: none;
   color: inherit;
   font-size: 22px;
+  line-height: 1;
+  padding: 10px;
+  margin-right: -10px;
   cursor: pointer;
 }
 
@@ -360,8 +382,8 @@ html {
 }
 
 .hero-lockup h1 {
-  font-family: var(--font-hero-heading);
-  font-weight: 500;
+  font-family: var(--font-h1);
+  font-weight: 400;
   font-size: clamp(46px, 7vw, 84px);
   letter-spacing: 0.01em;
   line-height: 0.95;
@@ -416,7 +438,7 @@ html {
 .hero-bar-right p {
   font-family: var(--font-hero-heading);
   font-weight: 300;
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(17px, 1.5vw, 21px);
   max-width: 30ch;
 }
@@ -462,9 +484,10 @@ html {
   color: var(--cream);
 }
 
+.screen-copy h1,
 .screen-copy h2 {
-  font-family: var(--font-hero-heading);
-  font-weight: 500;
+  font-family: var(--font-h1);
+  font-weight: 400;
   font-size: clamp(44px, 5.6vw, 76px);
   line-height: 0.98;
   margin: 22px 0 26px;
@@ -486,7 +509,8 @@ html {
   background: #2a241b;
 }
 
-.screen-photo img {
+.screen-photo img,
+.screen-photo video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -538,9 +562,10 @@ html {
   z-index: 3;
 }
 
+.dining-heading h1,
 .dining-heading h2 {
-  font-family: var(--font-dining-heading);
-  font-weight: 500;
+  font-family: var(--font-h1);
+  font-weight: 400;
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -549,6 +574,7 @@ html {
   line-height: 1;
 }
 
+.dining-heading h1 .small,
 .dining-heading h2 .small {
   font-family: var(--font-body);
   font-weight: 500;
@@ -585,9 +611,10 @@ html {
   padding: 0 5%;
 }
 
+.suites-screen-head h1,
 .suites-screen-head h2 {
-  font-family: var(--font-suites-heading);
-  font-weight: 500;
+  font-family: var(--font-h1);
+  font-weight: 400;
   font-size: clamp(44px, 5.6vw, 76px);
   line-height: 0.98;
   margin: 22px 0 20px;
@@ -640,9 +667,10 @@ html {
   padding: 120px 6% 0;
 }
 
+.events-head h1,
 .events-head h2 {
-  font-family: var(--font-events-heading);
-  font-weight: 500;
+  font-family: var(--font-h1);
+  font-weight: 400;
   font-size: clamp(36px, 5.4vw, 70px);
   line-height: 1.04;
   margin-top: 18px;
@@ -1035,9 +1063,10 @@ html {
   flex-wrap: wrap;
 }
 
+.section-header h1,
 .section-header h2 {
-  font-family: var(--font-dining-heading);
-  font-weight: 500;
+  font-family: var(--font-h1);
+  font-weight: 400;
   font-size: clamp(34px, 4vw, 50px);
   margin-top: 12px;
 }
@@ -1239,6 +1268,145 @@ html {
   flex-wrap: wrap;
 }
 
+/* ---------- suites detail: same palette + type as the lux pages ----------
+   taupe background, white text, hairline borders, Analogist headings,
+   HT Grotesk body, square outline buttons */
+.suites-detail {
+  background: var(--taupe-deep);
+  color: #fff;
+  padding: clamp(90px, 12vw, 150px) 6%;
+}
+
+.suites-detail :focus-visible {
+  outline-color: #fff;
+}
+
+.suites-detail .section-header {
+  margin-bottom: clamp(48px, 7vw, 90px);
+}
+
+.suites-detail .eyebrow-num {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.44em;
+  color: #fff;
+}
+
+.suites-detail .section-header h2 {
+  font-family: var(--font-h1); /* Analogist */
+  font-weight: 400;
+  font-size: clamp(38px, 5.2vw, 68px);
+  line-height: 1.1;
+  margin-top: 22px;
+  color: #fff;
+}
+
+.suites-detail .section-header p {
+  max-width: 40ch;
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.suites-detail .menu-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 0;
+}
+
+.suites-detail .suite-content {
+  padding: 26px 24px 28px;
+}
+
+.suites-detail .menu-category {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.36em;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.suites-detail .menu-name {
+  font-family: var(--font-body); /* HT Grotesk */
+  font-weight: 500;
+  font-size: clamp(24px, 2.3vw, 30px);
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.suites-detail .suite-blurb {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 12px 0 18px;
+}
+
+.suites-detail .suite-features {
+  gap: 8px 10px;
+  margin-bottom: 24px;
+}
+
+.suites-detail .suite-features li {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 0;
+  padding: 6px 12px;
+}
+
+.suites-detail .suite-foot {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.suites-detail .menu-price {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.suites-detail .menu-price strong {
+  font-weight: 500;
+  color: #fff;
+}
+
+/* "Book on WhatsApp": black, curvy pill button with white text */
+.suites-detail .pill-btn {
+  background: var(--dark);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.suites-detail .suite-gallery-nav {
+  border-radius: 0;
+  color: var(--taupe-deep);
+}
+
+/* Page that contains the suites detail section: taupe navbar instead of the
+   dark page background showing through (uses :has, so no page class is needed) */
+.hima-page:has(.suites-detail) {
+  background: var(--taupe-deep);
+}
+
+.hima-page:has(.suites-detail) .navbar {
+  background: var(--taupe);
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .hima-page:has(.suites-detail) .nav-links {
+    background: var(--taupe);
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+  }
+}
+
 /* ==========================================
    RESPONSIVE MEDIA QUERIES
    ========================================== */
@@ -1410,6 +1578,7 @@ html {
     grid-column: 1;
     grid-row: 2;
     justify-self: start;
+    font-size: 11px;
   }
 
   .footer-btn {
@@ -1503,8 +1672,8 @@ html {
   grid-template-columns: repeat(12, 1fr);
   gap: 0 24px;
   align-items: center;
-  padding: clamp(24px, 5vw, 56px) 5% clamp(40px, 7vw, 90px);
-  min-height: 60vh;
+  padding: clamp(24px, 6vw, 72px) 5% clamp(56px, 9vw, 120px);
+  min-height: 80vh;
 }
 
 .hm-hero-copy {
@@ -1514,25 +1683,25 @@ html {
 }
 
 .hm-hero h2 {
-  font-size: 1.15em;
+  font-size: 1.5em;
   margin-bottom: 16px;
   color: #fff;
 }
 
 .hm-hero p {
   max-width: 34ch;
-  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
   color: #fff;
-  margin-bottom: 26px;
+  margin-bottom: 32px;
 }
 
 .hm-hero-art {
   grid-column: 7 / span 6;
   position: relative;
   aspect-ratio: 1241 / 1754;
-  max-height: 60vh;
+  max-height: 84vh;
   justify-self: end;
-  width: min(100%, 340px);
+  width: min(100%, 520px);
   animation: hm-rise 1.1s cubic-bezier(.2, .7, .1, 1) both;
 }
 
@@ -1610,12 +1779,11 @@ html {
 .hm-stagewrap {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 }
 
 .hm-stage {
   position: relative;
-  width: min(100%, 460px, calc((100vh - 200px) * .7075));
+  width: min(100%, calc((100vh - 130px) * .7075));
   aspect-ratio: 1241 / 1754;
   overflow: hidden;
   background: var(--taupe);
@@ -1699,29 +1867,23 @@ html {
 }
 
 .hm-actions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
 }
 
 .hm-actions button {
-  padding: 12px 6px;
-  border: 1px solid var(--line-light);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line-light);
   width: 100%;
-  text-align: center;
+  text-align: left;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 13px;
-  transition: background .25s, color .25s, border-color .25s;
+  justify-content: space-between;
+  transition: padding .3s cubic-bezier(.2, .7, .1, 1), border-color .25s;
 }
 
-.hm-actions button:hover:not(:disabled) {
-  background: var(--ink);
-  color: var(--cream);
-  border-color: var(--ink);
-}
-
+.hm-actions button:hover:not(:disabled) { padding-left: 10px; border-color: var(--ink); }
 .hm-actions button:disabled { opacity: .35; cursor: default; }
 
 /* Lightbox */
@@ -1781,14 +1943,14 @@ html {
 @media (max-width: 900px) {
   .hm-hero { grid-template-columns: 1fr; min-height: 0; }
   .hm-hero-copy, .hm-hero-art { grid-column: 1; }
-  .hm-hero-art { justify-self: start; margin-top: 48px; width: min(66%, 280px); }
+  .hm-hero-art { justify-self: start; margin-top: 48px; width: min(86%, 420px); }
   .hm-reader { grid-template-columns: 1fr; gap: 28px; }
   .hm-rail { flex-direction: row; position: static; max-height: none; overflow-x: auto; overflow-y: hidden; padding: 0 0 10px; order: 3; }
   .hm-thumb { width: 64px; flex: none; }
   .hm-thumb[aria-current="page"] { transform: translateY(-4px); }
   .hm-info { position: static; order: 2; }
   .hm-stagewrap { order: 1; }
-  .hm-stage { width: min(100%, 380px); }
+  .hm-stage { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1809,18 +1971,25 @@ html {
 }
 
 .lux.hima-page { background: var(--lux-bg); color: var(--lux-white); }
-.lux.hima-page h2,
+.lux.hima-page h1,
+.lux.hima-page h2 { font-family: var(--font-h1); font-weight: 400; }
 .lux.hima-page h3 { font-family: var(--lux-serif); font-weight: 300; }
 .lux.hima-page :focus-visible { outline: 2px solid var(--lux-accent); outline-offset: 4px; }
-.lux.hima-page section { scroll-margin-top: 92px; }
+.lux.hima-page section { scroll-margin-top: 64px; }
 .lux-wrap { max-width: 1180px; margin: 0 auto; }
 
 /* ---------- navbar: solid taupe, logo left, links / hamburger right ---------- */
 .lux .navbar {
-  height: 92px;
+  height: 64px;
   background: var(--taupe);
   color: #fff;
   border-bottom: 0;
+  transition: background 0.35s ease;
+}
+
+/* becomes transparent once the page is scrolled (class set in MenuTemplate6.jsx) */
+.lux.is-scrolled .navbar {
+  background: transparent;
 }
 
 .lux .nav-logo {
@@ -1833,7 +2002,7 @@ html {
 .lux .nav-logo-main {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 34px;
+  font-size: 24px;
   letter-spacing: 0.02em;
   color: #fff;
 }
@@ -1841,7 +2010,7 @@ html {
 .lux .nav-logo-sub {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 15px;
+  font-size: 11px;
   letter-spacing: 0.14em;
   color: #fff;
   opacity: 1;
@@ -1858,13 +2027,13 @@ html {
 
 .lux .mobile-toggle {
   color: #fff;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1;
 }
 
 @media (max-width: 980px) {
   .lux .nav-links {
-    top: 92px;
+    top: 64px;
     background: var(--taupe);
     color: #fff;
     border-bottom: 1px solid var(--lux-hair);
@@ -1898,10 +2067,14 @@ html {
   bottom: 28px;
   z-index: 90;
   padding: 15px 28px;
-  background: rgba(146, 133, 114, 0.82);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7);
+  /* --p (0 -> 1) is set from MenuTemplate6.jsx while the button merges into
+     the "Reserve your table" button in the reservations section */
+  background: rgba(146, 133, 114, calc(0.82 * (1 - var(--p, 0))));
+  -webkit-backdrop-filter: blur(calc(8px * (1 - var(--p, 0))));
+  backdrop-filter: blur(calc(8px * (1 - var(--p, 0))));
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, calc(0.7 * (1 - var(--p, 0))));
+  transform-origin: 0 0;
+  will-change: transform, opacity;
 }
 
 /* ---------- hero ---------- */
@@ -2099,8 +2272,8 @@ html {
 
 @media (max-width: 560px) {
   .lux .nav-logo { gap: 10px; }
-  .lux .nav-logo-main { font-size: 30px; }
-  .lux .nav-logo-sub { font-size: 13px; }
+  .lux .nav-logo-main { font-size: 22px; }
+  .lux .nav-logo-sub { font-size: 10px; }
   .lux-reserve { right: 16px; bottom: 16px; padding: 12px 18px; letter-spacing: 0.2em; }
   .lux-btn { padding: 15px 26px; }
   .lux-item { padding: 24px 0; }

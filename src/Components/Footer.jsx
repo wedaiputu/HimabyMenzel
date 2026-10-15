@@ -49,7 +49,6 @@ export default function Footer() {
         <a
           href={`mailto:${SITE.email}`}
           className="footer-contact-item"
-          aria-label="Email Us"
         >
           <svg
             className="footer-icon"
@@ -63,6 +62,7 @@ export default function Footer() {
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
           </svg>
+          <span>{SITE.email}</span>
         </a>
       </div>
 

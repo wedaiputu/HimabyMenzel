@@ -5,7 +5,7 @@ export const SITE = {
   whatsapp: "+628213849221", // digits only, with country code, no + sign
   phone: "+628213849221",
   instagram: "himabymenzel",
-  email: "hello@himabymenzel.com",
+  email: "himabymenzel@gmail.com",
   addressLines: [
     "Jl. Raya Penelokan No. 890",
     "Batur Selatan, Kintamani, Bangli, Bali 80652",

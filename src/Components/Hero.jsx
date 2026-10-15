@@ -2,6 +2,13 @@ import Mark from "../data/Mark";
 import { SITE } from "../data/site";
 import { HERO_LOGO, HERO_SECTION_VIDEO_POSTER_ALT } from "../data/photos";
 
+// Replace with your WhatsApp number: country code + number, digits only
+// (e.g. Indonesia: 6281234567890 - no "+", spaces or leading 0)
+const WHATSAPP_NUMBER = SITE.whatsapp || "6281234567890";
+
+const whatsappLink = (message) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
 export default function Hero({
   heroRef,
   videoRef,
@@ -67,15 +74,22 @@ export default function Hero({
             Mount Batur.
           </p>
           <div className="hero-bar-actions">
-            <button className="pill-btn" onClick={() => scrollTo("menu")}>
+            <a
+              className="pill-btn"
+              href={whatsappLink("Hello Hima, I would like to reserve a table.")}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Dine With Us
-            </button>
-            <button
+            </a>
+            <a
               className="pill-btn pill-btn--outline"
-              onClick={() => scrollTo("suites-detail")}
+              href={whatsappLink("Hello Hima, I would like to book a stay.")}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Stay With Us
-            </button>
+            </a>
           </div>
         </div>
         <div className="hero-bar-right">

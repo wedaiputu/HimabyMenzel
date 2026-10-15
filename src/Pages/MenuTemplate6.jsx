@@ -110,7 +110,88 @@ function Diet({ list }) {
 export default function MenuTemplate6() {
   const [open, setOpen] = useState(null); // index into PAGES
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const closeRef = useRef(null);
+  const floatRef = useRef(null); // the floating "Reserve Your Table" button
+  const resBtnRef = useRef(null); // the "Reserve your table" button in #reservations
+
+  // Navbar turns transparent once the page is scrolled
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // The floating button glides into the reservations button and becomes one with it
+  useEffect(() => {
+    const fl = floatRef.current;
+    const target = resBtnRef.current;
+    if (!fl || !target) return;
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+    let raf = 0;
+
+    const update = () => {
+      raf = 0;
+      const vw = document.documentElement.clientWidth;
+      const vh = window.innerHeight;
+      const cs = getComputedStyle(fl);
+      const w = fl.offsetWidth;
+      const h = fl.offsetHeight;
+
+      // where the floating button rests (fixed, bottom-right)
+      const restLeft = vw - parseFloat(cs.right) - w;
+      const restTop = vh - parseFloat(cs.bottom) - h;
+
+      const t = target.getBoundingClientRect();
+
+      // merging starts as the target enters the screen and is finished by the
+      // time you reach the bottom of the page
+      const maxScroll = document.documentElement.scrollHeight - vh;
+      const targetTopAtBottom = t.top + window.scrollY - maxScroll;
+      const start = vh - 24;
+      const end = Math.max(
+        Math.min(targetTopAtBottom + 24, start - 120),
+        start - 0.55 * vh
+      );
+      const p = clamp((start - t.top) / (start - end), 0, 1);
+      const e = p * p * (3 - 2 * p); // smooth easing
+
+      if (reduce) {
+        fl.style.transform = "none";
+      } else {
+        const dx = (t.left - restLeft) * e;
+        const dy = (t.top - restTop) * e;
+        const sx = 1 + (t.width / w - 1) * e;
+        const sy = 1 + (t.height / h - 1) * e;
+        fl.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`;
+      }
+
+      fl.style.setProperty("--p", e.toFixed(3));
+      const fade = clamp((e - 0.93) / 0.07, 0, 1); // hand over to the real button
+      fl.style.opacity = String(1 - fade);
+      fl.style.visibility = fade >= 1 ? "hidden" : "visible";
+    };
+
+    const schedule = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    window.addEventListener("load", schedule);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
+
+    return () => {
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      window.removeEventListener("load", schedule);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
 
   const sections = useMemo(() => MENU.filter((s) => s.items.length > 0), []);
 
@@ -146,7 +227,7 @@ export default function MenuTemplate6() {
   const current = open !== null ? PAGES[open] : null;
 
   return (
-    <div className="hima-page lux">
+    <div className={`hima-page lux${scrolled ? " is-scrolled" : ""}`}>
       <Navbar navItems={NAV} mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} scrollTo={scrollTo} />
 
       {/* Hero */}
@@ -222,7 +303,7 @@ export default function MenuTemplate6() {
           <span className="lux-eyebrow">Reservations</span>
           <h2 className="lux-h2">Reserve your table</h2>
           <p>Book through WhatsApp, or call us directly.</p>
-          <a className="lux-btn" href={`https://wa.me/${WHATSAPP}`}>Reserve your table</a>
+          <a ref={resBtnRef} className="lux-btn" href={`https://wa.me/${WHATSAPP}`}>Reserve your table</a>
 
           <div className="lux-contact">
             <a href={MAPS_URL} target="_blank" rel="noreferrer">Directions</a>
@@ -237,7 +318,7 @@ export default function MenuTemplate6() {
         </div>
       </section>
 
-      <a className="lux-btn lux-reserve" href={`https://wa.me/${WHATSAPP}`}>Reserve Your Table</a>
+      <a ref={floatRef} className="lux-btn lux-reserve" href={`https://wa.me/${WHATSAPP}`}>Reserve Your Table</a>
 
       {/* Printed menu viewer */}
       {current && (
