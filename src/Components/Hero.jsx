@@ -4,7 +4,7 @@ import { HERO_LOGO, HERO_SECTION_VIDEO_POSTER_ALT } from "../data/photos";
 
 // Replace with your WhatsApp number: country code + number, digits only
 // (e.g. Indonesia: 6281234567890 - no "+", spaces or leading 0)
-const WHATSAPP_NUMBER = SITE.whatsapp || "6281234567890";
+const WHATSAPP_NUMBER = SITE.whatsapp || "08213849221";
 
 const whatsappLink = (message) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

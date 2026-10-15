@@ -45,7 +45,7 @@
   --ink: #201c17;
   --ink-soft: rgba(32, 28, 23, 0.68);
   --dark: #17140f;
-  --dark-soft: rgba(247, 244, 236, 0.66);
+  --dark-soft: rgb(255, 254, 249);
   --amber: #875c3f; /* Updated warm earthy brown background */
   --line-light: rgba(32, 28, 23, 0.16);
   --line-dark: rgba(247, 244, 236, 0.2);
@@ -105,7 +105,7 @@
 
 .hima-page p {
   font-family: var(--font-body); /* HT Grotesk */
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .hima-page :focus-visible {
@@ -172,7 +172,7 @@ html {
   justify-content: center;
   gap: 8px;
   padding: 14px 26px;
-  border-radius: 999px;
+  border-radius: 10px;
   border: none;
   background: var(--ink);
   color: var(--cream);
@@ -185,10 +185,10 @@ html {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.pill-btn--sm {
-  padding: 9px 10px;
-  font-size: 8px;
-}
+/* .pill-btn--sm {
+  padding: 15px 15px;
+  font-size: 12px;
+} */
 
 .pill-btn:hover {
   transform: translateY(-2px);
@@ -496,7 +496,7 @@ html {
 
 .screen-copy p {
   max-width: 42ch;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: var(--dark-soft);
 }
@@ -628,6 +628,9 @@ html {
 
 .suite-strip {
   display: flex;
+  gap: 5px;
+  box-sizing: border-box;
+  padding: 0 14px;
   height: 46vh;
   min-height: 300px;
   width: 100vw;
@@ -655,7 +658,7 @@ html {
 .suites-screen-foot {
   display: flex;
   justify-content: flex-end;
-  padding: 26px 5% 30px;
+  padding: 26px 5% 10px;
 }
 
 /* ==========================================
@@ -843,7 +846,8 @@ html {
 }
 
 .book-address {
-  font-size: 13.5px;
+  /* font-family: Arial, sans-serif; */
+  font-size: 16px;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.78);
 }
@@ -851,10 +855,10 @@ html {
 .book-address strong {
   display: block;
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   color: #fff;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 .book-actions {
@@ -1467,25 +1471,41 @@ html {
   }
 
   .screen-photo {
-    height: 300px;
+    height: 600px;
     min-height: 300px;
     order: -1;
   }
 
   .screen-copy {
-    padding: 90px 6% 50px;
+    padding: 50px 6% 50px;
   }
 
+  /* two 9:16 photos side by side, the 16:9 photo spans the full width below */
   .suite-strip {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    padding: 0 5%;
     height: auto;
+    min-height: 0;
   }
 
-  .suite-strip-panel,
+  .suite-strip-panel {
+    flex: none;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 9 / 16;
+  }
+
   .suite-strip-panel:nth-child(5) {
     flex: none;
-    height: 42vw;
-    min-height: 180px;
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+  }
+
+  .suite-strip-panel img {
+    position: absolute;
+    inset: 0;
   }
 
   .events-cols {

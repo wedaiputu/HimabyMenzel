@@ -26,11 +26,11 @@ export const EXPERIENCE_VIDEO_POSTER =
 export const DINING_PHOTO = "/Images/HimaResto/DineImage.jpeg"; // section 02, full-bleed background
 
 export const SUITE_STRIP_PHOTOS = [
-  "/Images/HimaVenue2.jpg",
-  "/Images/HimaVenue4.jpg",
-  "/Images/HimaVenue5.jpg",
-  "/Images/HimaVenue6.jpg",
-  "/Images/HimaVenue7.jpg",
+  "https://res.cloudinary.com/dimnv9sq5/image/upload/f_auto,q_auto/v1792067170/Screenshot_2026-10-15_at_5.54.33_PM_rhnnyw.png", // 1
+  "https://res.cloudinary.com/dimnv9sq5/image/upload/f_auto,q_auto/v1792067167/Screenshot_2026-10-15_at_5.54.51_PM_sxcaih.png", // 2
+  "https://res.cloudinary.com/dimnv9sq5/image/upload/f_auto,q_auto/v1792067165/Screenshot_2026-10-15_at_5.54.43_PM_o04yng.png", // 3
+  "https://res.cloudinary.com/dimnv9sq5/image/upload/f_auto,q_auto/v1792067166/Screenshot_2026-10-15_at_5.54.57_PM_udatfa.png", // 4
+  "https://res.cloudinary.com/dimnv9sq5/image/upload/f_auto,q_auto/v1792067168/Screenshot_2026-10-15_at_5.55.19_PM_fxgzkm.png", // 5
 ];
 
 export const EVENTS_PHOTO = "https://res.cloudinary.com/dimnv9sq5/image/upload/v1790503185/Hapus_Tombol_Event_1_zecdpd.png"; // section 04, event setup photo

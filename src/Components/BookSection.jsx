@@ -25,7 +25,7 @@ export default function BookSection() {
 
         <div className="book-address">
           {SITE.addressLines.map((line) => (
-            <div key={line}>{line}</div>
+            <p key={line}>{line}</p>
           ))}
           <strong>{SITE.addressShort}</strong>
         </div>
