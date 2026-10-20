@@ -13,9 +13,9 @@ import "../HimaTemplate3.css";
 const CLOUD = "dimnv9sq5";
 
 // Edit these to match the real venue details.
-const PHONE = "+62000000000";
-const PHONE_LABEL = "+62 000 0000 0000";
-const WHATSAPP = "62000000000";
+const PHONE = "+628213849221";
+const PHONE_LABEL = "082 1384 9221";
+const WHATSAPP = "+628213849221";
 const MAPS_URL = "https://maps.google.com/?q=HIMA+by+Menzel+Kintamani";
 
 // Hero photo (Cloudinary public ID, from Hima_Menu2/Mains). Swap for your best candlelit plate.
@@ -69,17 +69,18 @@ const MENU = [
   { id: "wine", title: "Wine Pairings", items: [] },
 ];
 
-// Printed menu pages in Hima_Menu3 (page number, Cloudinary suffix).
+// Printed menu pages in Hima_Menu3 (page number from the file name, Cloudinary suffix).
+// Files are HIMA_MENU_UPDATE_2026-<page>_<suffix>.jpg
 const PAGES = [
-  [3, "bsbfki"], [4, "byctm1"], [5, "ogqz7n"], [6, "d3nrx5"], [7, "yofvvk"],
-  [8, "plsxi4"], [9, "dku9wg"], [10, "qznwva"], [11, "ccp9ln"], [12, "jcpvla"],
-  [13, "mriycr"], [14, "oaoc5z"], [15, "obe4j7"], [16, "ve9nlk"], [17, "cpix3n"],
-  [18, "jpcgqu"], [19, "zbjurn"], [20, "yaaqaq"], [21, "inxwxk"], [22, "mh8byg"],
-  [23, "icltch"], [24, "ooq6ky"], [25, "nwudtb"], [26, "xyeeqv"], [27, "aio7no"],
-  [28, "s7vkad"], [29, "soqlpg"], [30, "dvzptx"], [31, "abfcsv"],
+  [3, "z6nkwv"], [4, "nu56xg"], [5, "va90io"], [6, "gcvqqr"], [7, "ubfjvh"],
+  [8, "a1hgw3"], [9, "gmzfbw"], [10, "qsqrne"], [11, "g08gpm"], [12, "fh9j4n"],
+  [13, "hbu0f2"], [14, "vngbbt"], [15, "kzzrtp"], [16, "u455bb"], [17, "z6lxyz"],
+  [18, "i7gm3n"], [19, "gzpfl0"], [20, "wf26qb"], [21, "na84om"], [22, "fuwp2e"],
+  [23, "gfp7b0"], [24, "or64ka"], [25, "qaa2ka"], [26, "k23rrx"], [27, "sznwfx"],
+  [28, "ebetll"], [29, "da5xsv"], [30, "pj15sf"],
 ].map(([n, id]) => ({
   page: n,
-  id: `MENU_HIMA_2026_page-${String(n).padStart(4, "0")}_${id}`,
+  id: `HIMA_MENU_UPDATE_2026-${n}_${id}`,
 }));
 
 const img = (id, w, extra = "") =>
@@ -322,14 +323,14 @@ export default function MenuTemplate6() {
 
       {/* Printed menu viewer */}
       {current && (
-        <div className="lux-lb" role="dialog" aria-modal="true" aria-label={`Menu page ${current.page}`}>
+        <div className="lux-lb" role="dialog" aria-modal="true" aria-label={`Menu page ${open + 1} of ${PAGES.length}`}>
           <button ref={closeRef} type="button" className="lux-lb-close" onClick={close}>Close</button>
           <div className="lux-lb-scroll" onClick={close}>
-            <img src={img(current.id, 1600)} alt={`HIMA menu page ${current.page}`} />
+            <img src={img(current.id, 1600)} alt={`HIMA menu page ${open + 1}`} />
           </div>
           <div className="lux-lb-nav">
             <button type="button" onClick={() => step(-1)} disabled={open === 0}>Previous</button>
-            <span>Page {current.page}</span>
+            <span>Page {open + 1} / {PAGES.length}</span>
             <button type="button" onClick={() => step(1)} disabled={open === PAGES.length - 1}>Next</button>
           </div>
         </div>
